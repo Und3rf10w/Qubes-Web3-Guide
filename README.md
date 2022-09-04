@@ -20,7 +20,7 @@ Suggestions for improvements or identifications of vulnerabilities for the propo
 
 
 ## Donations
-Donations are accepted for via either the Github Sponsors program, or at the following cryptocurrency addresses:
+Donations are accepted at the following cryptocurrency addresses:
 
 - BTC: `<addme>`
 - ETH: `<addme>`
