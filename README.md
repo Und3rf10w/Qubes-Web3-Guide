@@ -1,7 +1,7 @@
 # Overview
 This set of documentation describes my web 3 development and usage environments using [Qubes](https://www.qubes-os.org/) 4.1.1.
 
-[Click here to skip straight to the Setup Guide](#Setup%20Guide)
+[Click here to skip straight to the Setup Guide](#setup-guide)
 
 This projects serves to document my effort, and may act as a guide for for individuals or groups wanting to use or develop on web 3 in a secure manner using the Qubes OS and principles from [Qubes](https://www.qubes-os.org/doc/getting-started/), without the need for the use of a physical hardware wallet.
 

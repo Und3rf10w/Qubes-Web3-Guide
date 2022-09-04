@@ -30,7 +30,7 @@ Using method 1 (snap), you can have a base VSCodium environment that you can clo
 # Installation from official apt sources
 ==**It is HIGHLY recommended you follow these steps at least once**==
 
-1. In `dom0`, create a new TemplateVM from your [`debian-11-min-web3-development` TemplateVM](Development%20Environment/Base%20web3%20development%20Qube.md) to create a new `debian-11-min-web3-dev-codium` TemplateVM:
+1. In `dom0`, create a new TemplateVM from your [`debian-11-min-web3-development` TemplateVM](/Development%20Environment/Base%20web3%20development%20Qube.md) to create a new `debian-11-min-web3-dev-codium` TemplateVM:
 ```bash
 qvm-clone debian-11-min-web3-development debian-11-min-web3-codium
 ```

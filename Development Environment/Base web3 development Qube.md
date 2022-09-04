@@ -1,6 +1,6 @@
 # Setting up the base Web 3 development TemplateVM
 
-We will use our core [`debian-11-minimal` TemplateVM](/Qubes%20Web3%20Development%20Environment/Core%20Environment/Installing%20Debian%2011%20minimal%20template.md) to be the base of our developer TemplateVM.
+We will use our core [`debian-11-minimal` TemplateVM](/Core%20Environment/Installing%20Debian%2011%20minimal%20template.md) to be the base of our developer TemplateVM.
 
 Begin, in `dom0`, with creating our TemplateVM:
 
