@@ -2,22 +2,24 @@
 The VSCodium installation here assumes that you want to set up a unique VSCodium that has access to the VSCode extensions.
 
 ## Risk Tolerance
-There are three options for setting up VSCodium depending on your risk appetite. ==The `snap` installation method is recommended==, otherwise your VSCodium TemplateVM and core `debian-11-min-web3-development` TemplateVM will not be in sync, which may lead to potential issues.
+There are three options for setting up VSCodium depending on your risk appetite. The `snap` installation method is the most simple, as otherwise your VSCodium TemplateVM and core `debian-11-min-web3-development` TemplateVM will not be in sync, which may lead to potential issues. 
+
+The recommended apt method is preferred, but a bit more complicated and involved.
 
 You can ignore the VSCode extension store setup, but it may lead to a less optimal experience at the trade-off of increase security and/or privacy.
 
 This model assumes that the sources of VSCodium are free of back-doors. If that doesn't work for you, compile from source.
 
 # Installation Guide
-Depending on your use case(s), you may want to use multiple methoasdfds (e.g. the `snap` method, and one of the `apt` methods).
+Depending on your use case(s), you may want to use multiple methods (e.g. the `snap` method, and one of the `apt` methods).
 
 1. (**RECOMMENDED**) [Install from `snap`](https://snapcraft.io/codium)
-	1. Create a new appVM from the `debian-11-min-web3-development` TemplateVM (`web3-dev-core-codium`)
+	1. Create a new appVM from the `debian-11-min-web3-development` TemplateVM (e.g. called `web3-dev-core-codium`)
 	2. Inside this new appVM, execute `snap install codium`
 3. (*RECOMMENDED**) (New TemplateVM) Install from community provided apt sources:
-	- As described in [Codium's official documentation](https://vscodium.com/#install), you also have the option of installing a codium from a [community repo for major releases](https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo), or a [community repo for hourly releases](https://vscodium.c7.ee/)
+	- As described in [VSCodium's official documentation](https://vscodium.com/#install), you also have the option of installing a VSCodium from a [community repo for major releases](https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo), or a [community repo for hourly releases](https://vscodium.c7.ee/)
 	- Recommended if you want to install the latest VSCodium in sync with releases
-4. (New TemplateVM) Install from debian apt sources:
+4. (New TemplateVM) Install from Debian apt sources:
 	- A bit more annoying as you'd have to create a new TemplateVM and base appVMs off of that
 	- Not recommended due to lagging updates
 
@@ -28,7 +30,7 @@ Using method 1 (snap), you can have a base VSCodium environment that you can clo
 ==#todo: document this==
 
 # Installation from official apt sources
-==**It is HIGHLY recommended you follow these steps at least once**==
+**It is HIGHLY recommended you follow these steps at least once**
 
 1. In `dom0`, create a new TemplateVM from your [`debian-11-min-web3-development` TemplateVM](/Development%20Environment/Base%20web3%20development%20Qube.md) to create a new `debian-11-min-web3-dev-codium` TemplateVM:
 ```bash
@@ -39,7 +41,7 @@ qvm-clone debian-11-min-web3-development debian-11-min-web3-codium
 wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
 qvm-copy pub.gpg  # CHOOSE: debian-11-min-web3-codium
 ```
-3. Return to your codium template and run:
+3. Return to your VSCodium template and run:
 ```bash
 cat ~/QubesIncoming/$dispVM_name/pub.gpg | gpg --dearmor | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
 rm -rf ~/QubesIncoming/*  # Keeps your template clean
@@ -110,9 +112,6 @@ Edit `/usr/share/codium/resources/app/product.json` appropriately to match on yo
   ]
 }
 ```
-
-
-
 
 ## Completing install 
 Once everything is ready, return to `dom0`, run:

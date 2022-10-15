@@ -12,7 +12,7 @@ This document assumes the reader already has a working familiarity with Web 3 an
 While secure and private computing is a personal passion, that by no means makes me an expert, and I make no guarantees. I have taken every reasonable effort to create a secure environment and workflow based off of the culmination of my knowledge, including operational security practices based off of my theoretical threat model. 
 
 As one review's this document, it is critical to always consider:
-> ==_MY_ threat model model is **NOT** _YOUR_ threat model.==
+> _MY_ threat model model is **NOT** _YOUR_ threat model
 
 This document ignores certain supply chain risks, such as compromise of the underlying hardware Qubes is operating on, compromise of the integrity of the user's Yubikey, and Xen hypervisor exploits. Essentially, if you're being targeted using these types of attacks, you likely have bigger problems that this model can't assist with.
 
@@ -69,6 +69,7 @@ To facilitate the proposed security model, Qubes are segmented into three enviro
 
 
 ## Consumer Environment
+- [Setting up split-bitcoin using Qubes](Consumer%20Environment/split-bitcoin.md)
 
 
 

@@ -1,5 +1,9 @@
-# Setting up the base Web 3 development TemplateVM
+# Overview
+# Installation
+## Prerequisites
+- You should already have completed [Installing Debian 11 minimal template](Core%20Environment/Installing%20Debian%2011%20minimal%20template.md), as templates will be based off of this
 
+## Setting up the base Web 3 development TemplateVM
 We will use our core [`debian-11-minimal` TemplateVM](/Core%20Environment/Installing%20Debian%2011%20minimal%20template.md) to be the base of our developer TemplateVM.
 
 Begin, in `dom0`, with creating our TemplateVM:
@@ -36,6 +40,19 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo bash -
 sudo apt install -y nodejs
 ```
 
+On this same TemplateVM, we need to set up npm to install modules locally for the user:
+
+```
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
+echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.profile
+sudo cp -r ~/.npm-global /etc/skel/
+sudo cp ~/.profile /etc/skel/
+sudo cp ~/.npmrc /etc/skel/
+```
+
+Now when any AppVM is made from this template, node modules will be installed just for that AppVM`
+
 Finally, return to `dom0` and run:
 
 ```bash
@@ -43,7 +60,7 @@ qvm-prefs --default debian-11-min-web3-development netvm
 ```
 
 ## Docker
-To install `docker` and `docker-compose`, we're going to use the [official Docker installation instructions].
+To install `docker` and `docker-compose`, we're going to use the [official Docker installation instructions](https://docs.docker.com/engine/install/).
 
 The correct way to do this is to download the individual keys from a dispVM and copy them over, then manually follow the provided instructions.
 
